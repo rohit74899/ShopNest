@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 we used Axios 
      |
         which returns promise
@@ -16,3 +17,7 @@ we used Axios
               | 
          |                |
       useState hook      useReducer hook
+=======
+# Ecommerce_website
+Project Name : Ecommerce Website 
+>>>>>>> 2df7b297c763acb7c9cce4d01f1291b5aaf5dc58
