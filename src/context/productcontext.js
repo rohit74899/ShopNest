@@ -17,7 +17,9 @@ const initalialState={
     isLoading:false,
     isError:false,
     products:[],
-    featureProducts:[],
+    featureProducts:[],//this is aaray
+    isSingleLoading:false,
+    singleProduct:{},//this is object
     // those data having value true tose only added
 }
 const AppProvider =({children})=>{
@@ -25,7 +27,7 @@ const AppProvider =({children})=>{
     const [state,dispatch]=useReducer(reducer,initalialState);
     
     const getProducts= async(url)=>{
-        dispatch({type:"SET_LOADING"});
+        dispatch({type:"SET_LOADING"}); 
         try{
         const res= await axios.get(url);
         const products =await res.data;
@@ -37,6 +39,18 @@ const AppProvider =({children})=>{
         }
     };
     
+    // 2nd APi call for single product
+    const getSingleProduct= async(url)=>{
+        dispatch({type:"SET_SINGLE_LOADING"});
+        try{
+            const res= await axios.get(url);
+            const singleProduct = await res.data;
+      dispatch({ type: "SET_SINGLE_PRODUCT", payload: singleProduct }); 
+            //in axios we get por data in {data} object
+            } catch (error){
+                dispatch({type:"SET_SINGLE_ERROR"});
+            }
+    }
     
     useEffect(()=>{
         getProducts(API);
@@ -46,7 +60,7 @@ const AppProvider =({children})=>{
 
     //... is a spread operator
     //state is a varaible
-    <AppContext.Provider value={{...state}}>{children}</AppContext.Provider>
+    <AppContext.Provider value={{...state, getSingleProduct}}>{children}</AppContext.Provider>
     );
 };
 // the children is basically our app component 
@@ -59,4 +73,13 @@ const useProductContext=()=>{
     return useContext(AppContext);
 }
 
-export {AppProvider,AppContext, useProductContext};
+export {AppProvider,AppContext,useProductContext};
+
+//dispatch method is state menagement library associated with React useReducer ,Hook
+
+// Axios is a popular JavaScript library used for making HTTP requests from a web browser or Node.js. It provides a simple and convenient API for sending asynchronous HTTP requests to a server and handling the responses.
+
+//Important pt
+// context API
+// dispatch
+// Axios

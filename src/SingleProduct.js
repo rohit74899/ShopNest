@@ -1,8 +1,43 @@
 import styled from "styled-components";
+import { useParams } from "react-router-dom";//hook
+import { useEffect } from "react";
+import { useProductContext } from "./context/productcontext";
 
+
+const API = "https://api.pujakaitem.com/api/products";
 
 const SingleProduct=()=>{
-  return <Wrapper> SingleProduct</Wrapper>;
+  const { getSingleProduct, isSingleLoading, singleProduct } =
+    useProductContext();
+  console.log("~file: productcontext.js ~ line 10 ~ getProducts ~ res",singleProduct); 
+  const {id} =useParams();
+  // console.log("~file: productcontext.js ~ line 10 ~ getProducts ~ res",id); 
+  
+
+  //all data is inside singleProduct
+  //we are destructing that data
+
+  const{
+    id:alis,
+    name,
+    company,
+    price,
+    description,
+    category,
+    stock,
+    stars,
+    reviews,
+  }=singleProduct;
+
+  
+  
+
+  useEffect(()=>{
+    getSingleProduct(`${API}?id=${id}`)
+  },[]);// [] --array dependancy
+
+
+  return <h1> Single page{name}</h1>;
 }
 
 
