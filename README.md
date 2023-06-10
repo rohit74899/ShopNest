@@ -42,4 +42,8 @@
 
 **5.Important part about hook**
    - we need to always define HOOK at the top of the function not in the file 
+<<<<<<< HEAD
+=======
+   - wheneevr we load page and we get the data same time for that we have useEffect hook
+>>>>>>> API_USE
 >>>>>>> API_USE

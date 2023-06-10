@@ -1,6 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom';
-
+import FormatPrice from '../Helpers/FormatPrice';
 
 // we use Product component in FeatureProduct.js
 //we have passed props there we get that data as an object
@@ -20,7 +20,7 @@ function Product(curElem) {
                 <div className="card-data-flex">
                     <h3>{name}</h3>
                     <p className="card-data--price">
-                        {price}
+                        {<FormatPrice price={price}/>}
                     </p>
                 </div>
             </div>
