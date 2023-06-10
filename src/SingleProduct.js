@@ -2,6 +2,11 @@ import styled from "styled-components";
 import { useParams } from "react-router-dom";//hook
 import { useEffect } from "react";
 import { useProductContext } from "./context/productcontext";
+import PageNavigation from "./components/PageNavigation";
+import MyImage from "./MyImage";
+import {Container} from "./styles/Container";
+import FormatPrice from "./Helpers/FormatPrice";
+import Star from "./components/Star";
 
 
 const API = "https://api.pujakaitem.com/api/products";
@@ -27,6 +32,7 @@ const SingleProduct=()=>{
     stock,
     stars,
     reviews,
+    image,
   }=singleProduct;
 
   
@@ -36,14 +42,71 @@ const SingleProduct=()=>{
     getSingleProduct(`${API}?id=${id}`)
   },[]);// [] --array dependancy
 
+if(isSingleLoading){
+  return <div className="page_loading">Loading....</div>
+}
+  return (
+  <Wrapper> 
+      <PageNavigation title={name}/>
+      <Container className="container">
+        <div className="grid grid-two-column">
+            {/* Product image */}
+            <div className="product_image">
+              <MyImage imgs={image}/>
+            </div>
+            {/* product data */}
+            <div className="product-data">
+              <h2>{name}</h2>
+              
+              {/* start component */}
+              <Star stars={stars} reviews={reviews}/>
 
-  return <h1> Single page{name}</h1>;
+              <p>{reviews} reviews</p>
+              <p className="product-data-price">
+                MRP:
+                <del>
+                  <FormatPrice price={price +250000}/>
+                </del>
+              </p>
+              <p className="product-data-price product-data-real-price">
+                  Deal of the Day
+                  <FormatPrice price={price}/>
+                
+              </p>
+              <p>{description}</p>
+              <div className="product-data-info">
+              <p>
+              Available:
+              <span>
+                {stock>0 ? "In stock":"Not Available"}
+              </span>
+              </p>
+              <p>
+              Brand:
+              <span>
+                {company}
+              </span>
+              </p>
+              
+            </div>
+            </div>
+            
+            
+        </div>
+
+      </Container>
+  </Wrapper>);
 }
 
 
 const Wrapper = styled.section`
   .container {
     padding: 9rem 0;
+    max-width: 100rem;
+  }
+  .product_images{
+    display:flex;
+    align-item:center;
   }
   .product-data {
     display: flex;

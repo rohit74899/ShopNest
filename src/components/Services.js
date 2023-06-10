@@ -42,6 +42,9 @@ function Services() {
 }
 
 const Wrapper=styled.section`
+.container{
+  max-width: 110rem;
+}
 padding: 9rem 0;
 
   .grid {

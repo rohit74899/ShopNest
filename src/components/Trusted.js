@@ -47,10 +47,12 @@ function Trusted() {
 }
 
 const Wrapper=styled.section`
+
 padding: 9rem 0;
 background-color: ${({ theme }) => theme.colors.bg};
 
 .brand-section {
+  
   padding: 12rem 0 0 0;
 }
 h3 {

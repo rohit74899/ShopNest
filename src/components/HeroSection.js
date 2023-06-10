@@ -34,6 +34,9 @@ function HeroSection({mydata}) {
   )
 }
 const Wrapper =styled.section`
+.container{
+  max-width: 110rem;
+}
 padding: 12rem 0;
 
   img {
