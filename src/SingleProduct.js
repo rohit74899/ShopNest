@@ -7,7 +7,7 @@ import MyImage from "./MyImage";
 import {Container} from "./styles/Container";
 import FormatPrice from "./Helpers/FormatPrice";
 import Star from "./components/Star";
-
+import AddToCart from "./components/AddToCart";
 
 const API = "https://api.pujakaitem.com/api/products";
 
@@ -89,7 +89,9 @@ if(isSingleLoading){
               </p>
               
             </div>
-            </div>
+            <hr />
+            {stock > 0 && <AddToCart product={singleProduct} />}
+         </div>
             
             
         </div>
