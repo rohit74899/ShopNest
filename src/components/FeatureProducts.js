@@ -8,7 +8,7 @@ import styled from 'styled-components';
 function FeatureProducts() {
 
     const {isLoading, featureProducts} =useProductContext();
-    // console.log("~file: productcontext.js ~ line 10 ~ getProducts ~ res",featureProducts); 
+    console.log("~file: productcontext.js ~ line 10 ~ getProducts ~ res",featureProducts); 
 
     if(isLoading){
         return <div>.....Loading</div>

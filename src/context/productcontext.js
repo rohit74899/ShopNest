@@ -31,7 +31,9 @@ const AppProvider =({children})=>{
         try{
         const res= await axios.get(url);
         const products =await res.data;
-        dispatch({type: "SET_API_DATA", paylaod: products}) 
+        
+        dispatch({type: "SET_API_DATA", payload: products})
+        dispatch({ type: "SET_LOADED" }); // Set the isLoaded flag to true 
         // type :you can write any name
         // payload :{which data is required to complete this work}
         } catch (error){

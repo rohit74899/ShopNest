@@ -7,8 +7,11 @@ const ProductReducer =(state, action)=>{
                  isLoading:true, // update the value of isloading
             };
         case "SET_API_DATA":
-            const featureData =action.paylaod.filter((curELe)=>{//filter is inbuild function
-                return curELe.featured ===true;
+            // console.log("action.payload:", action.payload);
+
+            //check whether data is receiving correctly
+            const featureData =action.payload.filter((curELe)=>{
+                return curELe.featured ===true;//filter is inbuild function
             })   
             return{
                 ...state,
