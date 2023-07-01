@@ -24,7 +24,7 @@ const Products = () => {
       <section className="product-view--sort">
         <div className="sort-filter">
           <Sort/>
-          sort
+          
         </div>
 
       <div className="main-products">

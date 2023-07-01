@@ -5,6 +5,7 @@ const GridView = ({products}) => {
     console.log(products);
   return (
     <Wrapper className="section">
+
       <div className="container grid grid-three-column">
         {
             products.map((curEle)=>{
@@ -17,7 +18,7 @@ const GridView = ({products}) => {
 }
 
 const Wrapper=styled.section`
-padding: 9rem 0;
+padding: 5rem 0;
 
 .container {
   max-width: 120rem;
