@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 const Cart = () => {
   return <Wrapper>
-    <h1>Cart</h1>
+    <h1>RCart</h1>
+    
   </Wrapper>;
 };
 
