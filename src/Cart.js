@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { useCartContext } from "./context/cart_context";
+import CartItem from "./components/CartItem";
 
 const Cart = () => {
   const { cart } = useCartContext();
