@@ -58,6 +58,8 @@ export const FilterContextProvider=({children})=>{
         </FilterContext.Provider>
     )
 }
+
+
 export const useContextFilter=()=>{
     return useContext(FilterContext);
 }

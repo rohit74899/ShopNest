@@ -6,22 +6,7 @@ import { FaDiscord, FaInstagram } from 'react-icons/fa';
 function Footer() {
   return (
     <Wrapper>
-      <section className="contact-short">
-        <div className="grid grid-two-column">
-            <div>
-                <h3>Ready to get started</h3>
-                <h3>Ready to get started</h3>
-            </div>
-            <div>
-                <Button>
-                    <NavLink to="/contact">
-                        Get started
-                    </NavLink>
-                </Button>
-            </div>
-        </div>
-      </section>
-      {/* Main footer */}
+      
       <footer>
         <div className='container grid grid-four-column'>
             <div className="footer-about">

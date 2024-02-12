@@ -1,11 +1,12 @@
 const cartReducer = (state, action) => {
     if (action.type === "ADD_TO_CART") {
-      let { id, amount, product } = action.payload;
-  
+      let { id, color,amount, product } = action.payload;
+            
       let cartProduct = {
-        id: id,
+        id: id + color,
         name: product.name,
-        amount,
+        color,
+        amount,  
         image: product.image && product.image.length > 0 ? product.image[0].url : '',
         price: product.price,
         max: product.stock,

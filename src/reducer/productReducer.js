@@ -11,7 +11,7 @@ const ProductReducer =(state, action)=>{
 
             //check whether data is receiving correctly
             const featureData =action.payload.filter((curELe)=>{
-                return curELe.featured ===true;//filter is inbuild function
+                return curELe.featured===true; //filter is inbuild function
             })   
             return{
                 ...state,

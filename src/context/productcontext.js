@@ -22,6 +22,8 @@ const initalialState={
     singleProduct:{},//this is object
     // those data having value true tose only added
 }
+
+
 const AppProvider =({children})=>{
     
     const [state,dispatch]=useReducer(reducer,initalialState);
@@ -77,11 +79,11 @@ const useProductContext=()=>{
 
 export {AppProvider,AppContext,useProductContext};
 
-//dispatch method is state menagement library associated with React useReducer ,Hook
+// dispatch method is state menagement library associated with React useReducer ,Hook
 
 // Axios is a popular JavaScript library used for making HTTP requests from a web browser or Node.js. It provides a simple and convenient API for sending asynchronous HTTP requests to a server and handling the responses.
 
-//Important pt
+// Important pt
 // context API
 // dispatch
 // Axios
